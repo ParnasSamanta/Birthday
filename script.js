@@ -1,3 +1,6 @@
+window.onbeforeunload = function () {
+    window.scrollTo(0,0);
+};
 
 const stopConfetti = () => {
     setTimeout (function() {
@@ -69,6 +72,6 @@ window.onscroll = function (e) {
 
 //preventscroll
 
-// window.onload = function() {
-//     disableScroll();
-// }
+window.onload = function() {
+    disableScroll();
+}
