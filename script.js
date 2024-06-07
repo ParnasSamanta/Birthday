@@ -48,24 +48,38 @@ gsap.from("#page2 .images",{
 //vedio playback
 
 const vids = document.querySelectorAll("video");
-window.onscroll = function (e) {
-    e = window.scrollY;
-    for (let i = 2; i <= vids.length; i++) {
-        if (e == i*window.innerHeight) {
-            vids[i-2].play();
-            vids[i-2].onended = function () {
-                window.scrollBy({
-                    behavior:"smooth",
-                    top: window.innerHeight
-                });
+
+let debounceTimeout;
+
+window.onscroll = function () {
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(() => {
+        const scrollPosition = window.scrollY;
+        const viewportHeight = window.innerHeight;
+
+        vids.forEach((video, index) => {
+            const videoPosition = (index + 2) * viewportHeight;
+
+            if (scrollPosition >= videoPosition && scrollPosition < videoPosition + viewportHeight) {
+                if (video.paused) {
+                    video.play();
+                }
+                video.onended = function () {
+                    window.scrollBy({
+                        behavior: "smooth",
+                        top: viewportHeight,
+                    });
+                };
+            } else {
+                if (!video.paused) {
+                    video.pause();
+                    video.currentTime = 0;
+                }
             }
-        } else {
-            vids[i-2].pause();
-            vids[i-2].currentTime = 0;
-        }
-    }
-    
+        });
+    }, 100); // Adjust the debounce delay as needed
 };
+
 
 // dataUrl = c.toDataURL();
 // your_div.style.background='url('+dataUrl+')';

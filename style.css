@@ -48,6 +48,10 @@ body {
     scroll-snap-align: start;
 }
 
+.frontContent {
+    display: flex;
+}
+
 /* background css */
 .mainContent {
     /* background-color: #0c192c; */
@@ -103,15 +107,93 @@ body {
     }
 }
 
+/* images-style */
+
 .images {
     height: 500px;
-    width: 1000px;
+    width: 400px;
     position: relative;
-    top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 4%;
+    margin-left: 1%;
+    background-color: black;
     z-index: 1;
 }
-video {
-    height: 200px;
-    width: 200px;
-    z-index: 1;
+
+.images::before {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 140%;
+    background-color: white;
+    box-shadow: 0 0 5px rgb(8, 8, 8);
+    animation: border_animate 4s linear infinite;
+}
+  
+#one_gin::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background-image: url(images/one_gin.jpg);
+    background-size: cover;
+    border-radius: 5px;
+}
+
+#two_shadow::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background-image: url(images/two_shadow.jpg);
+    background-size: cover;
+    border-radius: 5px;
+}
+
+#three_gojo::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background-image: url(images/three_gojo.jpg);
+    background-size: cover;
+    border-radius: 5px;
+}
+
+#four_ayanokoji::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background-image: url(images/four_ayanokoji.jpg);
+    background-size: cover;
+    border-radius: 5px;
+}
+
+#five_vanitas::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background-image: url(images/five_vanitas.jpg);
+    background-size: cover;
+    border-radius: 5px;
+}
+  
+@keyframes border_animate {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+}
+
+.vids {
+    border: 2px solid white;
+    display: flex;
+    position: relative;
+    margin-left: 35%;
+    margin-top: 4%;
+    height: 400px;
+    width: 400px;
 }
