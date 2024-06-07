@@ -37,9 +37,53 @@ stopConfetti();
 gsap.from("#page2 .images",{
     scale:0,
     opacity:0,
-    duration:2,
+    duration:3,
     scrollTrigger:{
         trigger:"#page2 .images",
+        scroller:"body",
+        start:"top 60%"
+    }
+})
+
+gsap.from("#page3 .images",{
+    scale:0,
+    opacity:0,
+    duration:2,
+    scrollTrigger:{
+        trigger:"#page3 .images",
+        scroller:"body",
+        start:"top 60%"
+    }
+})
+
+gsap.from("#page4 .images",{
+    scale:0,
+    opacity:0,
+    duration:2,
+    scrollTrigger:{
+        trigger:"#page4 .images",
+        scroller:"body",
+        start:"top 60%"
+    }
+})
+
+gsap.from("#page5 .images",{
+    scale:0,
+    opacity:0,
+    duration:2,
+    scrollTrigger:{
+        trigger:"#page5 .images",
+        scroller:"body",
+        start:"top 60%"
+    }
+})
+
+gsap.from("#page6 .images",{
+    scale:0,
+    opacity:0,
+    duration:2,
+    scrollTrigger:{
+        trigger:"#page6 .images",
         scroller:"body",
         start:"top 60%"
     }
@@ -81,10 +125,37 @@ window.onscroll = function () {
 };
 
 
-// dataUrl = c.toDataURL();
-// your_div.style.background='url('+dataUrl+')';
+// slider js
+const slides = document.querySelectorAll(".slide");
+console.log(slides.length);
+var sliderCounter = 0;
+slides.forEach ( 
+    (slide,index) => {
+        slide.style.left = `${index * 100}%`
+    }
+)
 
-//preventscroll
+const transition = () => {
+    slides.forEach(
+        (slide) => {
+            slide.style.transform = `translateX(-${sliderCounter * 100}%)`
+        }
+    )
+}
+
+const slideShow = () => {
+    if (sliderCounter >= slides.length) {
+        sliderCounter = 0;
+    }
+    transition();
+    console.log(sliderCounter);
+    sliderCounter++;
+}
+const start = setInterval(slideShow,2000);
+while (window.onload) {
+    start;
+}
+//slider js end
 
 window.onload = function() {
     disableScroll();

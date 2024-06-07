@@ -197,3 +197,22 @@ body {
     height: 400px;
     width: 400px;
 }
+
+/* slider */
+
+.slider{
+    width: 390px;
+    height: 500px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 2px 4px 8px 10px rgba(255, 68, 204, 0.4);
+    overflow: hidden;
+    z-index: 1;
+    margin: 20px;
+  }
+  .slide {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: 1s;
+  }
