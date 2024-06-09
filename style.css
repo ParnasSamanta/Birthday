@@ -110,16 +110,16 @@ body {
 /* images-style */
 
 .images {
-    height: 500px;
-    width: 400px;
+    height: 75vh;
+    width: 32vw;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    border-radius: 10px;
-    margin-top: 4%;
-    margin-left: 1%;
+    border-radius: 25px;
+    margin-top: 5%;
+    margin-left: 4%;
     background-color: black;
     z-index: 1;
 }
@@ -138,45 +138,45 @@ body {
     content: '';
     position: absolute;
     inset: 5px;
-    background-image: url(images/one_gin.jpg);
+    background-image: url(image.png);
     background-size: cover;
-    border-radius: 5px;
+    border-radius: 25px;
 }
 
 #two_shadow::after {
     content: '';
     position: absolute;
     inset: 5px;
-    background-image: url(images/two_shadow.jpg);
+    background-image: url(image.png);
     background-size: cover;
-    border-radius: 5px;
+    border-radius: 25px;
 }
 
 #three_gojo::after {
     content: '';
     position: absolute;
     inset: 5px;
-    background-image: url(images/three_gojo.jpg);
+    background-image: url(image.png);
     background-size: cover;
-    border-radius: 5px;
+    border-radius: 25px;
 }
 
 #four_ayanokoji::after {
     content: '';
     position: absolute;
     inset: 5px;
-    background-image: url(images/four_ayanokoji.jpg);
+    background-image: url(image.png);
     background-size: cover;
-    border-radius: 5px;
+    border-radius: 25px;
 }
 
 #five_vanitas::after {
     content: '';
     position: absolute;
     inset: 5px;
-    background-image: url(images/five_vanitas.jpg);
+    background-image: url(image.png);
     background-size: cover;
-    border-radius: 5px;
+    border-radius: 25px;
 }
   
 @keyframes border_animate {
@@ -201,15 +201,15 @@ body {
 /* slider */
 
 .slider{
-    width: 390px;
-    height: 500px;
+    width: 32vw;
+    height: 75vh;
     position: relative;
-    border-radius: 8px;
+    border-radius: 25px;
     box-shadow: 2px 4px 8px 10px rgba(255, 68, 204, 0.4);
     overflow: hidden;
     z-index: 1;
-    margin: 30px;
-    top: 2rem;
+    top: 12%;
+    left: 5%;
   }
   .slide {
     height: 100%;
