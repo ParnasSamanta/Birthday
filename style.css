@@ -17,9 +17,9 @@ body {
 .pages{
     height: 100vh;
     width: 100vw;
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
 }
 #page0{
     
@@ -208,11 +208,65 @@ body {
     box-shadow: 2px 4px 8px 10px rgba(255, 68, 204, 0.4);
     overflow: hidden;
     z-index: 1;
-    margin: 20px;
+    margin: 30px;
+    top: 2rem;
   }
   .slide {
     height: 100%;
     width: 100%;
     position: absolute;
     transition: 1s;
+  }
+
+  /* last slider */
+
+  .img-container {
+    position: relative; 
+    height: 70vh; /* responsive */
+    width: 32vw;
+    perspective: 500px;
+    transform-style: preserve-3d;
+    /* margin-left: 1rem ; */
+    left: 15%;
+    margin-top: 5%;
+  }
+  .box {
+    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 1px solid #bbb;
+    position: absolute;
+    top: 50%;
+    transition: 800ms ease-in-out;
+  }
+  .box img {
+    width: 100%;
+    height: 100%;
+  }
+  .box:first-of-type {
+    z-index: 5;
+    opacity: 0;
+    left: 5%;
+    transform: translate(-50%, -50%) ;
+  }
+  .box:nth-of-type(2) {
+    opacity: 1;
+    left: 10%;
+    transform: translate(-50%, -50%) ;
+    z-index: 5;
+  }
+  .box:nth-of-type(3) {
+    left: 15%;
+    opacity: 0.75;
+    color: #eee;
+    z-index: 10;
+    transform: translate(-50%, -50%)  translateZ(-50px);
+  }
+  .box:nth-of-type(4) {
+    z-index: 5;
+    opacity: 0.5;
+    left:20%;
+    transform: translate(-50%, -50%)  translateZ(-100px);
   }

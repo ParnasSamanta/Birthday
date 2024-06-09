@@ -27,6 +27,7 @@ const tick = () => {
                     top: window.innerHeight
                 });
                 Canvas.style.visibility = "hidden";
+
                 confetti.stop();  
             },21047)
             enableScroll();

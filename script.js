@@ -151,11 +151,20 @@ const slideShow = () => {
     console.log(sliderCounter);
     sliderCounter++;
 }
-const start = setInterval(slideShow,2000);
+const start = setInterval(slideShow,3000);
 while (window.onload) {
     start;
 }
 //slider js end
+
+//last slider
+let imgContainer = document.querySelector(".img-container");
+setInterval(() => {
+        let last = imgContainer.firstElementChild;
+        last.remove();
+        imgContainer.appendChild(last);
+    }, 2500);
+//last slier end
 
 window.onload = function() {
     disableScroll();
